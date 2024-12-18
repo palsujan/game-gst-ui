@@ -1,54 +1,54 @@
-@import './variables';
-@import './mixins';
+@import "./variables";
+@import "./mixins";
 
-img{
-    width: 20px;
-    margin-right: 5px;
+img {
+  width: 20px;
+  margin-right: 5px;
 }
-  // Header Styling
-  .headerTop{
-    display: flex;
-    position: relative;
-    background-color: #8E8E8E;
-  }
-  .header {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-   
-    text-align: left;
-    padding: 10px;
-  }
-  .header-close{
-    width: 35px;
-    height: 25px;
-    position: absolute;
-    top: 0;
-    bottom: 10px;
-    right: 15px;
-    margin: auto;
-    cursor: pointer;
+// Header Styling
+.headerTop {
+  display: flex;
+  position: relative;
+  background-color: #8e8e8e;
+}
+.header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
 
-     span {
-        width: 30px;
-        height: 2px;
-        background-color: #fff;
-        border-radius: 3px;
-        position: absolute;
-    
+  text-align: left;
+  padding: 10px;
+}
+.header-close {
+  width: 35px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  bottom: 10px;
+  right: 15px;
+  margin: auto;
+  cursor: pointer;
+
+  span {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 3px;
+    position: absolute;
+
+    &:nth-child(1) {
+      top: 16px;
+      left: 1px;
+      transform: rotate(-45deg);
     }
-    span:nth-child(1){
-        top: 16px;
-    width: 27px;
-    left: 1px;
-        transform: rotate(-45deg);
-    }
-    span:nth-child(2){
-        top: 16px;
-    width: 27px;
-        transform: rotate(45deg);
+
+    &:nth-child(2) {
+      top: 16px;
+      transform: rotate(45deg);
     }
   }
+}
+
 .gst-info {
   background-color: #fff;
   border-radius: 12px;
@@ -56,10 +56,10 @@ img{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin: 10px;
 
-.gstInforow{
+  .gstInforow {
     display: flex;
     justify-content: space-between;
-}
+  }
 
   .sub-header {
     font-size: 12px;
@@ -72,16 +72,21 @@ img{
 
   .highlight {
     margin: 15px 0;
-    padding: 10px;
+    padding: 1px;
     // background-color: $background-light;
     // border-left: 4px solid $primary-color;
-    background: rgb(229,249,255);
-background: linear-gradient(90deg, rgba(229,249,255,1) 0%, rgba(243,255,224,1) 51%);
-h3{
-    font-size: 15px;
-    line-height: 17.58px;
-    font-weight: bold;
-}
+    background: rgb(229, 249, 255);
+    background: linear-gradient(
+      90deg,
+      rgba(229, 249, 255, 1) 0%,
+      rgba(243, 255, 224, 1) 51%
+    );
+    h3 {
+      font-size: 15px;
+      line-height: 17.58px;
+      font-weight: bold;
+      margin: 2px;
+    }
 
     p {
       font-size: 1rem;
@@ -94,11 +99,11 @@ h3{
   .gst-summary {
     text-align: center;
 
-    .gst-summary1{
-        background-color:$background-color1 ;
-        padding: 5px 10px;
-        display: flex;
+    .gst-summary1 {
+        @include flex-center;
         justify-content: space-between;
+        background-color: $background-color1;
+        padding: 5px 10px;
     }
 
     h3 {
@@ -107,7 +112,6 @@ h3{
       color: $text-color;
       margin: 0;
       line-height: 14.06px;
-
     }
 
     .benefit-amount {
@@ -128,107 +132,147 @@ h3{
       @include flex-center;
       flex-direction: column;
       gap: 10px;
+      display: block;
 
       .pay {
         font-size: 1.2rem;
         font-weight: bold;
         color: $text-color;
-        p{
-            font-size: 13px;
-            margin: 0;
-            color: #333333;
-            font-weight: 500;
-            line-height: 15.23px;
+        p {
+          font-size: 13px;
+          margin: 0;
+          color: #333333;
+          font-weight: 500;
+          line-height: 15.23px;
         }
-        h4{
-            margin: 5px 0;
-            font-size: 26px;
-            line-height: 30.47px;
-            font-weight: bold;
+        h4 {
+          margin: 5px 0;
+          font-size: 26px;
+          line-height: 30.47px;
+          font-weight: bold;
         }
-        span{
-            display: block;
-            font-size: 11px;
-            color: #848484;
-            line-height: 12.89px;
+        span {
+          display: block;
+          font-size: 11px;
+          color: #848484;
+          line-height: 12.89px;
         }
       }
 
       .details {
-        display: flex; 
+        display: flex;
+        flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-between;
         font-size: 1rem;
-        
+        margin-top: 40px;
 
         .amount-item {
           color: $text-color;
           border: 1px solid #d8d8d8;
           border-radius: 10px;
-          margin: 0 20px;
+          margin: 0 10px;
           padding: 5px;
-          flex-basis: 46%;
-          p{
+          flex-basis: 38%;
+          position: relative;
+          p {
             color: #000;
             font-size: 11px;
             margin: 1px 0;
             line-height: 12.89px;
           }
 
-          &.tax h3{
+          &.tax h3 {
             color: red;
             font-weight: 700;
           }
-          &.taxx h3{ 
+          &.taxx h3 {
             color: $number-color;
             font-weight: 700;
+          }
+          .arrowtTurn1 {
+            img {
+              width: 15px;
+            }
+            position: absolute;
+            top: -22px;
+            bottom: 0;
+            right: -17px;
+            width: 10px;
+            height: 10px;
+            margin: auto;
+          }
+          .arrowtTurn2 {
+            img {
+              width: 15px;
+            }
+            position: absolute;
+            top: -22px;
+            bottom: 0;
+            left: -19px;
+            width: 10px;
+            height: 10px;
+            margin: auto;
+          }
+          .arrowtTurn3 {
+            img {
+              width: 2px;
+            }
+            position: absolute;
+            top: -93px;
+            bottom: 0;
+            right: -29px;
+            width: 10px;
+            height: 10px;
+            margin: auto;
           }
         }
       }
 
-
-      .bottom-text{
+      .bottom-text {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         margin: 0 10px;
-        .final-message{
-            text-align: right;
-            span{
-                display: block;
-                font-size: 12px;
-            }
+        .final-message {
+          text-align: right;
+          span {
+            display: block;
+            font-size: 12px;
+          }
         }
 
-        h3{
-            font-weight: 600;
+        h3 {
+          font-weight: 600;
         }
-        h4{
-            color: #87b41f;
-            margin: 5px 0;
-            font-size: 24px;
-            line-height: 28.13px;
+        h4 {
+          color: #87b41f;
+          margin: 5px 0;
+          font-size: 24px;
+          line-height: 28.13px;
         }
-        h5{
-            color: #87b41f;
-            margin: 5px 0;
-            font-size: 16px;
-            font-weight: 700;
+        h5 {
+          color: #87b41f;
+          margin: 5px 0;
+          font-size: 16px;
+          font-weight: 700;
         }
-        p{
-            font-size: 10px;
-            margin: 5px 0;
-            line-height: 11.72px;
-            padding-right: 40px;
+        p {
+          font-size: 10px;
+          margin: 5px 0;
+          line-height: 11.72px;
+          padding-right: 40px;
         }
-        .final-message{
-            P{
-
-            }
+        .final-message {
+          P {
+          }
         }
       }
       .platform-paid {
+        background: url(../assets/backgroundimg.png);
+        background-repeat: no-repeat;
+        background-position: top;
         margin-top: 10px;
         padding: 10px;
         background-color: #e7fff1;
@@ -239,13 +283,25 @@ h3{
         border-radius: 10px;
         text-align: left;
         width: 60%;
-        img{
-            width: 16px;
+        position: relative;
+        img {
+          width: 16px;
+        }
+        .arrowIcon {
+          img {
+            width: 30px;
+          }
+          position: absolute;
+          top: -22px;
+          bottom: 0;
+          right: -11px;
+          width: 10px;
+          height: 10px;
+          margin: auto;
         }
       }
     }
   }
-  
 
   // Responsive Styling
   @include responsive(mobile) {
@@ -259,7 +315,9 @@ h3{
     }
 
     .sub-header {
-      font-size: 0.9rem;
+      font-size: 11px;
+      line-height: 12.89px;
+      font-weight: 400;
     }
 
     .gst-summary {
@@ -267,12 +325,14 @@ h3{
         font-size: 0.9rem;
         font-weight: 600;
       }
-      .gst-summary1{
+      .gst-summary1 {
         display: block;
       }
 
       .benefit-amount {
-        font-size: 1.5rem;
+        font-size: 14px;
+        line-height: 16.41px;
+        margin-top: 10px;
       }
 
       h4 {
@@ -288,30 +348,71 @@ h3{
   }
 }
 
-@media(min-width:320){
+@media (max-width: 767px) {
+  .headerTop {
+    background-color: #fff;
+
     .header {
-        font-size: 1.2rem;
-        color: #333333;
-        background-color: #fff;
-        text-align: center;
-      }
-    .gst-info{
-        .gst-summary {
-            .gst-summary1{
-                display: block;
-                flex-direction: column;
-            }
-
-            .amount-details {
-                .bottom-text{
-                    display: block;
-                }
-
-                .bottom-text{
-                    flex-direction: column;
-                }
-            }
-        }
+      color: #333;
+      background-color: #fff;
+      text-align: center;
+      width: 100%;
     }
-    
+  }
+  span:nth-child(1),
+  span:nth-child(2) {
+    width: 20px;
+  }
+  .header-close span {
+    background-color: rgba(196, 196, 196, 1);
+  }
+
+  .gst-info {
+    .gst-summary {
+      .gst-summary1 {
+        display: block;
+        flex-direction: column;
+      }
+
+      .amount-details {
+        .details {
+          .amount-item {
+            flex-basis: 38%;
+          }
+        }
+        .bottom-text {
+          display: block;
+          flex-direction: column;
+          p {
+            padding: 0 75px;
+          }
+        }
+        .platform-paid {
+          width: 92%;
+          text-align: center;
+          .arrowIcon {
+            top: 75px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: rotate(90deg);
+          }
+        }
+        .bottom-text {
+          .final-message {
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+
+    .highlight {
+      h3 {
+        font-size: 14px;
+        line-height: 16.41px;
+      }
+    }
+  }
 }

@@ -2,6 +2,10 @@ import React from 'react';
 import '../styles/GSTInfo.scss';
 import handIcon from '../assets/hand_icon.svg';
 import warningIcon from '../assets/warning_icon.svg';
+import arrowIcon from '../assets/arrow_icon.svg';
+import rightTurn from '../assets/rightturn.svg';
+import leftTurn from '../assets/leftturn.svg';
+import line from '../assets/line.svg';
 
 const GSTInfo = ({ gstPaid, userAmount, totalAmount, platformPaid,onClose }) => {
   return (
@@ -43,16 +47,28 @@ const GSTInfo = ({ gstPaid, userAmount, totalAmount, platformPaid,onClose }) => 
             <div className="amount-item taxx">
                 <h3>₹{userAmount} </h3>
                 <p>Goes to your wallet</p>
+                <div className="arrowtTurn1">
+                        <img src={leftTurn} alt='arrowIcon'/>
+                </div>
+                <div className="arrowtTurn3">
+                        <img src={line} alt='arrowIcon'/>
+                </div>
             </div>
             <div className="amount-item tax">
                <h3> ₹{totalAmount - userAmount}</h3> 
                 <p>Govt. GST on your deposit</p>
+                <div className="arrowtTurn2">
+                        <img src={rightTurn} alt='arrowIcon'/>
+                </div>
             </div>
           </div>
           <div className='bottom-text'>
                 <div className="platform-paid">
                     <h5 className=''>₹{platformPaid}</h5>
                     <p> <img src={handIcon} alt='handIcon'/>GST paid by <strong>RummyCircle</strong> on your behalf</p>
+                    <div className="arrowIcon">
+                        <img src={arrowIcon} alt='arrowIcon'/>
+                    </div>
                 </div>
                 <div className="final-message">
                     <h3>You Get</h3>
