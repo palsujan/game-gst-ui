@@ -377,7 +377,7 @@ img {
       .amount-details {
         .details {
           .amount-item {
-            flex-basis: 38%;
+            flex-basis: 39%;
           }
         }
         .bottom-text {
@@ -414,6 +414,19 @@ img {
       h3 {
         font-size: 14px;
         line-height: 16.41px;
+      }
+    }
+  }
+}
+@media (max-width: 475px) {
+  .gst-info {
+    .gst-summary {
+      .amount-details {
+        .details {
+          .amount-item {
+            flex-basis: 38.5%; 
+          }
+        }
       }
     }
   }
