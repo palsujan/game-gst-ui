@@ -1,0 +1,317 @@
+@import './variables';
+@import './mixins';
+
+img{
+    width: 20px;
+    margin-right: 5px;
+}
+  // Header Styling
+  .headerTop{
+    display: flex;
+    position: relative;
+    background-color: #8E8E8E;
+  }
+  .header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+   
+    text-align: left;
+    padding: 10px;
+  }
+  .header-close{
+    width: 35px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    bottom: 10px;
+    right: 15px;
+    margin: auto;
+    cursor: pointer;
+
+     span {
+        width: 30px;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 3px;
+        position: absolute;
+    
+    }
+    span:nth-child(1){
+        top: 16px;
+    width: 27px;
+    left: 1px;
+        transform: rotate(-45deg);
+    }
+    span:nth-child(2){
+        top: 16px;
+    width: 27px;
+        transform: rotate(45deg);
+    }
+  }
+.gst-info {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+
+.gstInforow{
+    display: flex;
+    justify-content: space-between;
+}
+
+  .sub-header {
+    font-size: 12px;
+    text-align: left;
+    margin: 10px 0;
+    color: $text-color;
+    line-height: 14.06px;
+    font-weight: 400;
+  }
+
+  .highlight {
+    margin: 15px 0;
+    padding: 10px;
+    // background-color: $background-light;
+    // border-left: 4px solid $primary-color;
+    background: rgb(229,249,255);
+background: linear-gradient(90deg, rgba(229,249,255,1) 0%, rgba(243,255,224,1) 51%);
+h3{
+    font-size: 15px;
+    line-height: 17.58px;
+    font-weight: bold;
+}
+
+    p {
+      font-size: 1rem;
+      color: $primary-color;
+      margin: 0;
+    }
+  }
+
+  // GST Summary Section
+  .gst-summary {
+    text-align: center;
+
+    .gst-summary1{
+        background-color:$background-color1 ;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h3 {
+      font-size: 12px;
+      font-weight: 400;
+      color: $text-color;
+      margin: 0;
+      line-height: 14.06px;
+
+    }
+
+    .benefit-amount {
+      font-size: 1rem;
+      font-weight: bold;
+      color: $number-color;
+      margin: 0;
+    }
+
+    h4 {
+      font-size: 15px;
+      font-weight: bold;
+      margin: 15px 0;
+      line-height: 17.58px;
+    }
+
+    .amount-details {
+      @include flex-center;
+      flex-direction: column;
+      gap: 10px;
+
+      .pay {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $text-color;
+        p{
+            font-size: 13px;
+            margin: 0;
+            color: #333333;
+            font-weight: 500;
+            line-height: 15.23px;
+        }
+        h4{
+            margin: 5px 0;
+            font-size: 26px;
+            line-height: 30.47px;
+            font-weight: bold;
+        }
+        span{
+            display: block;
+            font-size: 11px;
+            color: #848484;
+            line-height: 12.89px;
+        }
+      }
+
+      .details {
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1rem;
+        
+
+        .amount-item {
+          color: $text-color;
+          border: 1px solid #d8d8d8;
+          border-radius: 10px;
+          margin: 0 20px;
+          padding: 5px;
+          flex-basis: 46%;
+          p{
+            color: #000;
+            font-size: 11px;
+            margin: 1px 0;
+            line-height: 12.89px;
+          }
+
+          &.tax h3{
+            color: red;
+            font-weight: 700;
+          }
+          &.taxx h3{ 
+            color: $number-color;
+            font-weight: 700;
+          }
+        }
+      }
+
+
+      .bottom-text{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 10px;
+        .final-message{
+            text-align: right;
+            span{
+                display: block;
+                font-size: 12px;
+            }
+        }
+
+        h3{
+            font-weight: 600;
+        }
+        h4{
+            color: #87b41f;
+            margin: 5px 0;
+            font-size: 24px;
+            line-height: 28.13px;
+        }
+        h5{
+            color: #87b41f;
+            margin: 5px 0;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        p{
+            font-size: 10px;
+            margin: 5px 0;
+            line-height: 11.72px;
+            padding-right: 40px;
+        }
+        .final-message{
+            P{
+
+            }
+        }
+      }
+      .platform-paid {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #e7fff1;
+        border: 2px solid $primary-color;
+        font-size: 1rem;
+        // color: $primary-color;
+        // font-weight: bold;
+        border-radius: 10px;
+        text-align: left;
+        width: 60%;
+        img{
+            width: 16px;
+        }
+      }
+    }
+  }
+  
+
+  // Responsive Styling
+  @include responsive(mobile) {
+    padding: 15px;
+
+    .header {
+      font-size: 1.2rem;
+      color: #333333;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .sub-header {
+      font-size: 0.9rem;
+    }
+
+    .gst-summary {
+      h3 {
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .gst-summary1{
+        display: block;
+      }
+
+      .benefit-amount {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1rem;
+      }
+
+      .amount-details {
+        .pay {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width:320){
+    .header {
+        font-size: 1.2rem;
+        color: #333333;
+        background-color: #fff;
+        text-align: center;
+      }
+    .gst-info{
+        .gst-summary {
+            .gst-summary1{
+                display: block;
+                flex-direction: column;
+            }
+
+            .amount-details {
+                .bottom-text{
+                    display: block;
+                }
+
+                .bottom-text{
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+    
+}
